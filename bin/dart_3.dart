@@ -1,42 +1,37 @@
-
-
-void main(){
-
+void main() {
   // List<int> listname = [1,2,3];
-  List<int> ages = [10,20,30];
+  List<int> ages = [10, 20, 30];
   List<String> names = ["Ahmed", "Amira", "Eslam"];
 
-  List<dynamic> mixed = [10, "Eman" , 10.5];
+  List<dynamic> mixed = [10, "Eman", 10.5];
 
-  // types of list 
+  // types of list
   // 1 fixed list
   // 2 growable list (mostly used)
 
   // fixed
-  var list = List<int>.filled(5,10);
+  var list = List<int>.filled(5, 10);
   print(list);
 
-
   // growable
-  var list1 = [10,20,30,40,50];
+  var list1 = [10, 20, 30, 40, 50];
   print(list1);
-
 
   print("item ${list1[2]}");
 
   print("Get Index By value ${list1.indexOf(40)}");
-  
+
   print("Length is ${list1.length}");
 
   list1[3] = 200;
 
   print("List After update : $list1");
 
-  List<String> names2 = ["Ahmed" , "Nour" , "Amina"]; // Mutable List
+  List<String> names2 = ["Ahmed", "Nour", "Amina"]; // Mutable List
   names2[1] = "Amira";
   print(names2);
 
-  const List<String> names3 = ["Ahmed" , "Nour" , "Shady"]; // Immutable List
+  const List<String> names3 = ["Ahmed", "Nour", "Shady"]; // Immutable List
   // names3[0] = "sss";
 
   // print("Immutable List $names3");
@@ -49,7 +44,7 @@ void main(){
 
   // print("Is Drinks Empty: " + drinks.isEmpty.toString());
   // print("Is Drinks not Empty: " + drinks.isNotEmpty.toString());
-  
+
   // print("Is Ages Empty: " + ages2.isEmpty.toString());
   // print("Is Ages not Empty: " + ages2.isNotEmpty.toString());
 
@@ -65,7 +60,7 @@ void main(){
   // evenList.addAll([14,16,18,20]);
   // print(evenList);
 
-  List myList = [1,2,3,4,5];
+  List myList = [1, 2, 3, 4, 5];
   print(myList);
 
   // myList.insert(2, 9);
@@ -74,7 +69,7 @@ void main(){
   // myList.insertAll(0, [8,4,1,0] );
   // print(myList);
 
-  myList.replaceRange(1, 3, [7,7,7]);
+  myList.replaceRange(1, 3, [7, 7, 7]);
   print(myList);
 
   // myList.remove(4);
@@ -91,11 +86,10 @@ void main(){
 
   // myList.forEach( (name)=>print(name));
 
-  List<int> list3 = [10,20,30,40,50];
+  List<int> list3 = [10, 20, 30, 40, 50];
   // list3.forEach((number) => print(number*2));
   // var doubledList = list3.map( (n) => n * 2 ); // 1. [20,40,60,80,100]
   // print(doubledList);
-
 
   // spread operators  ...
   // List<String> names_1 = ["Ahmed" , "Amir" , "Shady", "AAAAA", "SSSSS"];
@@ -104,18 +98,15 @@ void main(){
   // List<String> allNames = [...names_1, ...names_2];
   // print(allNames);
 
-
   // bool sad = false;
   // var cart = ['milk', 'Juice' , if(sad) 'Beer'];
   // print(cart);
 
   // where
   // List<int> numbers = [2,4,6,8,10,11,12,13,14];
-                                                // 1 , 2 , 3.tolist >>
+  // 1 , 2 , 3.tolist >>
   // List<int> even = numbers.where( (number) => number.isEven).toList(); //(10, 12, 14) ==> [10, 12,14]
   // print("Even Numbers : $even");
-  
-
 
   // Set
   // Set <data_type> variableName = {};
@@ -136,43 +127,41 @@ void main(){
 
   print("After Adding Lemon and Grape : $fruits");
 
-   fruits.remove("Apple");
-   print(fruits); 
+  fruits.remove("Apple");
+  print(fruits);
 
-   Set<int> nums = {10,20,30};
-   nums.addAll([40,50]);
-   print(nums);
+  Set<int> nums = {10, 20, 30};
+  nums.addAll([40, 50]);
+  print(nums);
 
-   for(String fruit in fruits) {
+  for (String fruit in fruits) {
     print("Fruit is $fruit");
-   }
+  }
 
   //  List<int> x = [10, 20, 30];
   //  for(int number in x){
   //   print(number);
   //  }
 
-  // to clear all items 
+  // to clear all items
   fruits.clear();
   print(fruits);
 
-
   // diff
   Set<String> fruits1 = {"Apple", "Orange", "Mango"};
-  Set<String> fruit2 = {"Apple","Grape", "Banana"};
+  Set<String> fruit2 = {"Apple", "Grape", "Banana"};
 
   Set<String> differenceSet = fruits1.difference(fruit2);
   print(differenceSet);
 
-
-  Set<String> days = {"Sunday" , "Monday" , "Tuesday"};
+  Set<String> days = {"Sunday", "Monday", "Tuesday"};
   print(days.elementAt(1));
 
   Set<String> intersectionSet = fruits1.intersection(fruit2);
   print(intersectionSet);
 
   // Map
-  // Map<String, String> countryCapital = { 
+  // Map<String, String> countryCapital = {
   //   'USA' : 'Washington',
   //   'China' : 'Bijing',
   //   'Egypt' : 'Cairo'
@@ -193,9 +182,9 @@ void main(){
   // print(countryCapital);
 
   Map<String, double> expenses = {
-    'sun' : 3000.00,
-    'mon' : 4000.00,
-    'tue' : 5000.00
+    'sun': 3000.00,
+    'mon': 4000.00,
+    'tue': 5000.00,
   };
 
   // print("All keys of Map with List ${expenses.keys.toList()}");
@@ -207,45 +196,30 @@ void main(){
   // expenses.remove('tue');
   // print(expenses);
 
-
-  // Map<String, dynamic> 
-  // var x = "yyy";  
+  // Map<String, dynamic>
+  // var x = "yyy";
   // dynamic y = "yyy";
   // x = "yyy";
   // y = 10;
 
-    Map<String, dynamic> book = {
-      'title' : 'Mission',
-      'author' : 'kuber',
-      'pages' : 233
-    };
+  Map<String, dynamic> book = {
+    'title': 'Mission',
+    'author': 'kuber',
+    'pages': 233,
+  };
 
-    for(MapEntry book in book.entries){
-      print("Key is ${book.key}, value ${book.value}");
-    }
+  for (MapEntry book in book.entries) {
+    print("Key is ${book.key}, value ${book.value}");
+  }
 
-    book.forEach((key, value) => print("Key is ${key}, value ${value}"));
+  book.forEach((key, value) => print("Key is ${key}, value ${value}"));
 
-    book.removeWhere( (key, value) => value != 233);
-    print(book);
+  book.removeWhere((key, value) => value != 233);
+  print(book);
 
+  List<Map<String, dynamic>> products = [
+    {"name": "Milk", "price": 300, "Quantity": 2}, // 1,
 
-
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    {"name": "Milk", "price": 300, "Quantity": 2}, // 2
+  ];
 }
