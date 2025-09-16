@@ -1,74 +1,84 @@
 
-class ParentClass {
+// enum days {
+//   Sunday,
+//   Monday,
+//   Tuesday,
+//   Wednesday,
+//   Thursday,
+//   Friday,
+//   Saturday
+// }
 
-}
+// class ParentClass {
 
-class ChildClass extends ParentClass {
+// }
 
-}
+// class ChildClass extends ParentClass {
 
-
-class Person {
-  String? name;
-  int? age;
-
-  void display(){
-    print("Name $name");
-    print("Age $age");
-  }
-}
-
-
-class Student extends Person {
-
-  String? schoolName;
-  String? schoolAddress;
+// }
 
 
-  void displaySchoolInfo(){
-    print("School Name: $schoolName");
-    print("School Address: $schoolAddress");
-  }
-}
+// class Person {
+//   String? name;
+//   int? age;
 
-class Car {
-  String? name;
-  double? price;
-}
+//   void display(){
+//     print("Name $name");
+//     print("Age $age");
+//   }
+// }
 
-class Tesla extends Car {
 
-  void display(){
-    print("Name: $name");
-    print("Price: $price");
-  }
-}
+// class Student extends Person {
 
-class Model3 extends Tesla {
-  String? color;
+//   String? schoolName;
+//   String? schoolAddress;
+
+
+//   void displaySchoolInfo(){
+//     print("School Name: $schoolName");
+//     print("School Address: $schoolAddress");
+//   }
+// }
+
+// class Car {
+//   String? name;
+//   double? price;
+// }
+
+// class Tesla extends Car {
+
+//   void display(){
+//     print("Name: $name");
+//     print("Price: $price");
+//   }
+// }
+
+// class Model3 extends Tesla {
+//   String? color;
 
   
-  void display(){
-    super.display();
+//   void display(){
+//     super.display();
 
-    print("Color : $color");
+//     print("Color : $color");
 
-  }
-}
+//   }
+// }
 
-class Shape {
-  double? d1;
-  double? d2;
+// class Shape {
+//   double? d1;
+//   double? d2;
 
-}
+// }
 
-class Rectangle extends Shape {
-  double area() => d1! * d2!;
-}
+// class Rectangle extends Shape {
+//   double area() => d1! * d2!;
+// }
 
-class Triangle extends Shape {
-  double area() => 0.5 * d1! * d2!;
-}
+// class Triangle extends Shape {
+//   double area() => 0.5 * d1! * d2!;
+// }
 
 
 // class Laptop {
@@ -93,86 +103,155 @@ class Triangle extends Shape {
 
 
 
-class Laptop{
+// class Laptop{
 
-  void display(){
-    print("Laptop display");
-  }
-}
+//   void display(){
+//     print("Laptop display");
+//   }
+// }
 
-class MacBook extends Laptop {
+// class MacBook extends Laptop {
 
-  void display(){
-    print("MacBook display");
-    super.display();
-  }
-}
+//   void display(){
+//     print("MacBook display");
+//     super.display();
+//   }
+// }
 
-class MacBookPro extends MacBook  {
+// class MacBookPro extends MacBook  {
 
-  void display(){
-    print("MacBookPro display");
-    super.display();
-  }
-}
-
-
-class Animal {
-
-  void eat(){
-    print("Animal is eating");
-  }
-}
-
-class Dog extends Animal {
-
-  @override
-  void eat(){
-    print("Dog is eating");
-
-  }
-}
+//   void display(){
+//     print("MacBookPro display");
+//     super.display();
+//   }
+// }
 
 
-class Employee {
-  static int count = 0;
+// class Animal {
+
+//   void eat(){
+//     print("Animal is eating");
+//   }
+// }
+
+// class Dog extends Animal {
+
+//   @override
+//   void eat(){
+//     print("Dog is eating");
+
+//   }
+// }
+
+
+// class Employee {
+//   static int count = 0;
   
-  Employee(){
-    // 1
-    count++;
-  }
+//   Employee(){
+//     // 1
+//     count++;
+//   }
 
-  void salary(){
-    print("Employee salary is \$1000");
-  }
+//   void salary(){
+//     print("Employee salary is \$1000");
+//   }
 
-  void totalCount(){
-    print("Total is $count");
-  }
+//   void totalCount(){
+//     print("Total is $count");
+//   }
 
+// }
+
+// class Manager extends Employee {
+//   @override
+//   void salary(){
+//     print("Manager salary is \$2000");
+//   }
+// }
+
+// class Developer extends Employee {
+//   @override
+//   void salary(){
+//     print("Developer salary is \$3000");
+//   }
+// }
+
+
+// class SimpleInterest {
+//   static double calculateIntrest(double principal, double rate, double time){
+//     return (principal * rate * time) / 100;
+//   }
+// }
+
+
+abstract class Vehicle {
+
+  void start();
+  void stop();
+
+ 
 }
 
-class Manager extends Employee {
+class Car extends Vehicle {
   @override
-  void salary(){
-    print("Manager salary is \$2000");
+  void start(){
+    print("car start");
   }
-}
-
-class Developer extends Employee {
   @override
-  void salary(){
-    print("Developer salary is \$3000");
+  void stop(){
+    print("car stop");
+  }
+}
+
+class Bike extends Vehicle {
+  @override
+  void start(){
+    print("bike start");
+  }
+  @override
+  void stop(){
+    print("bike stop");
+  }
+
+}
+
+
+
+abstract class Bank {
+  String name;
+  double rate;
+
+  Bank(this.name,this.rate);
+
+  void interest();
+
+  void display(){
+    print("Bank name : $name");
   }
 }
 
 
-class SimpleInterest {
-  static double calculateIntrest(double principal, double rate, double time){
-    return (principal * rate * time) / 100;
+class CIB extends Bank {
+
+  CIB(super.name, super.rate);
+
+  @override
+  void interest(){
+    print("CIB Rate : $rate");
   }
 }
 
+
+
+class QNB extends Bank {
+
+  QNB(super.name, super.rate);
+
+  @override
+  void interest(){
+    print("QNB Rate : $rate");
+  }
+}
 
 
 
@@ -234,11 +313,51 @@ void main(){
   // Employee emp3 = Employee();
   // emp3.totalCount();
 
-  print("Simple Interest is ${SimpleInterest.calculateIntrest(100, 2, 2)}");
+  // print("Simple Interest is ${SimpleInterest.calculateIntrest(100, 2, 2)}");
 
+
+  // enum
+  // var today = days.Tuesday;
+
+  // switch(today){
+  //   case days.Friday:
+  //     print("Today is Friday");
+  //     break;
+  //   case days.Monday:
+  //     print("Today is Monday");
+  //     break;
+  //   case days.Tuesday:
+  //     print("Today is Tuesday");
+  //     break;
+  //   case days.Wednesday:
+  //     print("Today is Wednesday");
+  //     break;
+  //   case days.Thursday:
+  //     print("Today is Thursday");
+  //     break;
+  //   case days.Saturday:
+  //     print("Today is Saturday");
+  //     break;
+  //   case days.Sunday:
+  //     print("Today is Sunday");
+  //     break;
+  // }
+
+  // Car car = Car();
+  // car.start();
+  // car.stop();
+
+  // Bike bike = Bike();
+  // bike.start();
+  // bike.stop();
+
+  CIB cib = CIB("CIB Cairo branch", 12);
+  QNB qnb = QNB("QNB Alex branch", 15);
+
+  cib.interest();
+  qnb.interest();
+
+  cib.display();
+  qnb.display();
   
-  
-
-
-
 }
