@@ -186,7 +186,7 @@
 
 abstract class Vehicle {
 
-  void start();
+  void start(){}
   void stop();
 
  
@@ -212,8 +212,8 @@ class Bike extends Vehicle {
   void stop(){
     print("bike stop");
   }
-
 }
+
 
 
 
