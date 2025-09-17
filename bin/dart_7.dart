@@ -176,10 +176,27 @@ class Person {
 }
 
 
+class Singleton {
+ 
+  static final Singleton _instance = Singleton._internal();
+
+  Singleton._internal();
+
+  factory Singleton(){
+    return _instance;
+  }
+}
 
 
+class P1 {
+   late String name;
 
-void main() {
+  void greet(){
+    print("Hello $name");
+  }
+}
+
+void main() async {
   // var macBook = MacBook();
   // macBook.turnOn();
   // macBook.turnOff();
@@ -199,11 +216,11 @@ void main() {
 
   // print("car C ${car._c}");
 
-  AreaFactory areaFactory = AreaFactory(10, 20);
-  print("Area is ${areaFactory.area}");
+  // AreaFactory areaFactory = AreaFactory(10, 20);
+  // print("Area is ${areaFactory.area}");
 
-  AreaFactory areaFactory2 = AreaFactory(-10, 20);
-  print("Area is ${areaFactory2.area}");
+  // AreaFactory areaFactory2 = AreaFactory(-10, 20);
+  // print("Area is ${areaFactory2.area}");
 
   // final person = Person('john', 'Exc');
 
@@ -213,5 +230,65 @@ void main() {
   // print("From Normal constructor: ${person.firstName} ${person.lastName}");
 
   // print("From Factory constructor: ${person2.firstName} ${person2.lastName}");
+
+  // Singleton obj1 = Singleton();
+  // Singleton obj2 = Singleton();
+
+  // print(obj1.hashCode);
+  // print(obj2.hashCode);
+
+  // int age = null; ?
+  // String? nam1 = null;
+  // String name = nam1!;
+
+  // String? name = "AA";
+
+  // // ??
+  // String nam1 = name ?? "BBB";
+  // print("Name $nam1");
+
+  // // if(name != null)
+
+  // P1 p = P1();
+  // p.name = "FF";
+  // p.greet(); // late
+  // print(object)
+
+
+  // print("First operation"); 
+
+  // // Future<void> aaa(){}
+
+  // // Future.delayed(Duration(seconds: 3), () => print("Second operation"),);
+
+  // print("Last operation");
+
+  print("Start");
+
+  String? name = await getUsername();
+
+  print("name ${name.capitalize()}");
+
+
+
+
+
+
+  
+
   
 }
+
+
+
+Future<String> getUsername() async {
+  return Future.delayed(Duration(seconds: 3), () => "ahmed",);
+}
+
+extension StringExtension on String {
+  String capitalize(){
+    return "${this[0].toUpperCase()}${this.substring(1)}";
+  }
+}
+
+
